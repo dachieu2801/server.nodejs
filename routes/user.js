@@ -10,7 +10,7 @@ router.post('/signin', UserController.signin);
 router.put('/editUser', UserController.editUser);
 router.get('/admin/:id', isAuth.admin, UserController.detailUser);
 router.get('/admin', isAuth.admin, UserController.collectUsers);
-router.get('/', UserController.allUsers);
+router.get('/', isAuth.admin, UserController.allUsers);
 
 
 module.exports = router;
